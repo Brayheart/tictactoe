@@ -10,3 +10,11 @@
   height: 200px;
   background-color: green;
 }
+
+.playerX {
+  background-image: url('cross.png')
+}
+
+.playerO {
+  background-image: url('circle.png')
+}

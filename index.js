@@ -1,26 +1,27 @@
-document.addEventListener("DOMContentloaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("here")
   const squares = document.querySelectorAll('.grid div')
+  const playerDisplay = document.querySelector('#player')
+
+  let currentPlayer = 'PlayerX'
 
   squares.forEach(square => {
-    console.log(square)
     square.addEventListener('click', clickOutcome)
   })
 
   function clickOutcome(e){
-    console.log('here')
+    const squareArray = Array.from(squares)
+    const index = squareArray.indexOf(e.target)
+    playerDisplay.innerHTML = currentPlayer
+
+    if(currentPlayer === 'PlayerX'){
+      squares[index].classList.add('playerX')
+      currentPlayer = 'PlayerO'
+    } else {
+      squares[index].classList.add('playerO')
+      currentPlayer = 'PlayerX'
+    }
   }
 })
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const squares = document.querySelectorAll('.grid div')
-
-//   squares.forEach(square => {
-//     // console.log(square)
-//     square.addEventListener('click', clickOutcome)
-//   })
-
-//   function clickOutcome(e) {
-// console.log("here")
-//   }
-// })
